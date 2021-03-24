@@ -56,15 +56,15 @@ overflow: clip|fade |ellipsis
 textScaleFactor
 maxLines
 style:TextStyle(
-     decoration
-     decorationColor
+    decoration
+    decorationColor
     decorationStyle
     wordSpacing
     letterSpacing
     fontStyle
     fontSize
     color
-     fontWeight
+    fontWeight
 )
 
 
@@ -87,7 +87,7 @@ Center(
                   decorationColor:Colors.white,
                   decorationStyle: TextDecorationStyle.dashed,
                   letterSpacing: 5.0
-                )              
+                  )              
               ),
               height: 300.0,
               width: 300.0,
@@ -181,20 +181,26 @@ title: Text("this is list",style: TextStyle(fontSize: 28.0),), subtitle: Text('t
 
 //动态列表
 class HomeContent extends StatelessWidget {
-List list=new List();
-HomeContent({ Key key }) : super(key: key){
-for(var i=0;i<20;i++){ list.add("这是第${i}条数据");
-}
-print(list); }
-@override
-Widget build(BuildContext context) {
-// TODO: implement build
-return ListView.builder( itemCount:this.list.length, itemBuilder:(context,index){
-// print(context); return ListTile(
-leading: Icon(Icons.phone),
-title: Text("${list[index]}"), );
-},
-); }
+  List list=new List();
+  HomeContent({ Key key }) : super(key: key){
+    for(var i=0;i<20;i++){ 
+      list.add("这是第${i}条数据");
+    }
+    print(list); 
+  }
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ListView.builder( 
+      itemCount:this.list.length, itemBuilder:(context,index){
+      // print(context); 
+        return ListTile(
+          leading: Icon(Icons.phone),
+          title: Text("${list[index]}"), 
+        );
+      },
+    ); 
+  }
 }
 
 /*******************************************/
@@ -389,20 +395,25 @@ type BottomNavigationBarType.fixed
 
 
 Scaffold(
-appBar: AppBar(
-title: Text('Flutter Demo') ),
-body: this._pagesList[this._curentIndex], bottomNavigationBar: BottomNavigationBar(
-currentIndex: _curentIndex,
-onTap: _changePage,
-fixedColor: Colors.black,
-type: BottomNavigationBarType.fixed, items: [
-BottomNavigationBarItem( title:Text("首页"), icon:Icon(Icons.home)
-), BottomNavigationBarItem(
-title:Text("分类"),
-icon:Icon(Icons.category) ),
-BottomNavigationBarItem( title:Text("设置"), icon:Icon(Icons.settings)
-),
-], ),
+  appBar: AppBar(
+      title: Text('Flutter Demo') 
+    ),
+  body: this._pagesList[this._curentIndex], 
+  bottomNavigationBar: BottomNavigationBar(
+    currentIndex: _curentIndex,
+    onTap: _changePage,
+    fixedColor: Colors.black,
+    type: BottomNavigationBarType.fixed, 
+    items: [
+      BottomNavigationBarItem( title:Text("首页"), icon:Icon(Icons.home)), BottomNavigationBarItem(
+        title:Text("分类"),
+        icon:Icon(Icons.category) ),
+      BottomNavigationBarItem( 
+        title:Text("设置"), 
+        icon:Icon(Icons.settings)
+      ),
+    ], 
+  ),
 )
 ```
 ### AppBar、Tab
@@ -829,7 +840,7 @@ Widget build(BuildContext context) {
            appBar: AppBar(
                 title: Text("搜索"), 
             ),
-             body:Text("我是一个表单页面 ${arguments != null ? arguments['id'] : '0'}") );
+            body:Text("我是一个表单页面 ${arguments != null ? arguments['id'] : '0'}") );
  } 
 }
 ```
