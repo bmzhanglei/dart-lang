@@ -20,7 +20,7 @@ fim
 home(主页) title(标题) color(颜色) theme(主题) routes(路由) ...
 
 ## Scaffold
-
+```
 Scaffold 是 Material Design 布局结构的基本实现。此类提供了用于显示 drawer、
 snackbar 和底部 sheet 的 API。
 Scaffold 有下面几个主要属性:
@@ -28,11 +28,11 @@ appBar - 显示在界面顶部的一个 AppBar。
 body - 当前界面所显示的主要内容 
 Widget。 drawer - 抽屉菜单控件。
 ...
-
+```
 ## Widget
 
 ### Container
-
+```
 alignment
 decoration: BoxDecoration( color: Colors.blue, border: Border.all(
             color: Colors.red,
@@ -47,9 +47,9 @@ transform:Matrix4.rotationZ(0.2),
 height
 width
 child
-
+```
 ### Text
-
+```
 textAlign: center | left | right | justfy
 textDirection:ltr |rtl
 overflow: clip|fade |ellipsis
@@ -117,9 +117,9 @@ Center(
               alignment: Alignment.bottomLeft,
           ),
     );
-
+```
 ### Image
-
+```
 Image.asset
  images/a.jpeg
  images/2.0x/a.jpeg
@@ -160,11 +160,11 @@ child: Container(
   )
 ), );
 
-
+```
 
 
 ### ListView
-
+```
   ListView
      scrollDirection:Axis.horizontal
      //scrollDirection:Axis.vertical
@@ -219,7 +219,7 @@ class HomeContent extends StatelessWidget {
     );
   }
 }
-
+```
 ### GridView
 
 1、垂直列表
@@ -231,7 +231,7 @@ class HomeContent extends StatelessWidget {
 
 1、可以通过 GridView.count 实现网格布局
 2、通过 GridView.builder 实现网格布局
-
+```
 scrollDirection:Axis
 padding:EdgeInsetsGeometry
 resolve:bool
@@ -246,7 +246,7 @@ edCrossAxisCount(常用)
 SliverGridDelegateWithMax
 控制布局主要用在 GridView.builder 里面
  CrossAxisExtent
-
+```
 ### Layout
 
 - Padding
@@ -274,9 +274,9 @@ SliverGridDelegateWithMax
 - Stack
 
      alignment  配置所有子元素的显示位置
-     children  子组件
+     children  子组件  
   
-  
+```
   Align
      alignment  配置所有子元素的显示位置
      children  子组件
@@ -304,8 +304,8 @@ SliverGridDelegateWithMax
               ),
         ),
       );
-  
-  
+``` 
+```
   Positioned
   top 子元素距离顶部的距离
   bottom  子元素距离底部的距离
@@ -337,9 +337,9 @@ SliverGridDelegateWithMax
               ),
         ),
       );
-
+```
 - AspectRatio
-
+```
   aspectRatio
     宽高比，最终可能不会根据这个值去布局， 具体则要看综合因素，外层是否允许按照这 种比率进行布局，这只是一个参考值
   child 子组件
@@ -350,7 +350,7 @@ SliverGridDelegateWithMax
             color: Colors.red,
        ),
   ),
-
+```
 - Card
 
   margin
@@ -358,7 +358,7 @@ SliverGridDelegateWithMax
   Shape Card 的阴影效果，默认的阴影效果为圆角的 长方形边。
 
 - Wrap
-
+```
   direction 主轴的方向，默认水平
   alignment 
   spacing
@@ -366,17 +366,19 @@ SliverGridDelegateWithMax
   verticalDirection
   runAlignment run 的对齐方式。run 可以理解为新的行或者 列，如果是水平方向布局的话，run 可以理解 为新的一行
   runSpacing run 的间距
+```
 
 ### StatefulWidget
-
+```
 StatelessWidget 是无状态组件，状态不可变的 widget
 StatefulWidget 是有状态组件，持有的状态可能在 widget 生命周期改变。通俗的讲:如果我 们想改变页面中的数据的话这个时候就需要用到 StatefulWidget
           setState(() {   //只有有状态组件里面才有
                   this.countNum++;
              });
+```
 
 ### BottomNavigationBar
-
+```
 items List<BottomNavigationBarItem> 底 部 导 航 条按钮集合
 iconSize
 currentIndex 默认选中第几个
@@ -402,7 +404,7 @@ BottomNavigationBarItem( title:Text("设置"), icon:Icon(Icons.settings)
 ),
 ], ),
 )
-
+```
 ### AppBar、Tab
 
 leading  首页通常logo,其他界面通常为返回按钮
@@ -431,7 +433,7 @@ labelPadding  每个 label 的 padding 值
 unselectedLabelColor  未选中 label 颜色
 unselectedLabelStyle 未选中 label 的 Style
 
-
+```
   bottom: TabBar(
               tabs: <Widget>[
                 Tab(text: "热门"),
@@ -499,10 +501,10 @@ class _TabBarControllerPageState extends State<TabBarControllerPage> with Single
     );
   }
 }
-
+```
 
 ### Drawer
-
+```
 return Scaffold(
      appBar: AppBar(
          title: Text("Flutter App"),
@@ -529,16 +531,16 @@ accountEmail 账户邮箱
 currentAccountPicture 用户头像
 otherAccountsPictures 用来设置当前账户其他账户头像
 margin
-
+```
 ### Button
 
 RaisedButton :凸起的按钮，其实就是 Material Design 风格的 Button 
 FlatButton :扁平化的按钮
 OutlineButton:线框按钮
 IconButton :图标按钮
-ButtonBar:按钮组 
+ButtonBar:按钮组   
 
-
+```
 onPressed
 child  Widget  文本控件
 textColor Color  文本颜色
@@ -596,7 +598,7 @@ floatingActionButton: Container(
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-
+```
 
 
 
@@ -604,7 +606,7 @@ floatingActionButton: Container(
 ### 表单
 
 - TextField
-
+```
   maxLines 设置此参数可以把文本框改为多行文本框
   onChanged 文本框改变的时候触发的事件
   decoration
@@ -614,9 +616,9 @@ floatingActionButton: Container(
       labelStyle 配置 lable 的样式
   obscureText 把文本框框改为密码框
   controller  controller 结合 TextEditingController()可以配置表单默认显示的内容
-
+```
 - Checkbox、CheckboxListTile
-
+```
   Checkbox 常见属性
   value true 或者 false
   onChanged 改变的时候触发的事件
@@ -633,9 +635,9 @@ floatingActionButton: Container(
   subtitle  二级标题
   secondary  配置图标或者图片
   selected  选中的时候文字颜色是否跟着改变
-
+```
 - Radio、RadioListTile
-
+```
   Radio 常用属性:
   value 单选的值
   onChanged 改变时触发
@@ -650,16 +652,16 @@ floatingActionButton: Container(
   subtitle 二级标题
   secondary 配置图标或者图片
   groupValue 选择组的值
-
+```
 - Switch
-
+```
   value 单选的值
   onChanged 改变时触发
   activeColor 选中的颜色、背景颜色
-
+```
 ### 日期组件
-
 日期组件:
+```
 var _datetime=DateTime.now();
 _showDatePicker() async{
     var date =await showDatePicker(
@@ -674,8 +676,9 @@ _showDatePicker() async{
        _datetime=date;
     });
 }
-
+```
 时间组件:
+```
 var _time=TimeOfDay(hour: 9,minute: 20);
 _showTimePicker() async{
     var time =await showTimePicker(
@@ -688,13 +691,14 @@ _showTimePicker() async{
        this._time=time;
     });
 }
+```
 
 第三方库 date_format
 formatDate(_datetime, [yyyy, '-', mm, '-',dd])
-flutter_cupertino_date_picker
+flutter_cupertino_date_picker  
 
 - 日期国际化
-
+```
   1、配置flutter_localizations依赖
   找到pubspec.yaml配置flutter_localizations
   
@@ -742,14 +746,14 @@ flutter_cupertino_date_picker
          _datetime=date;
       });
     }
-
+```
 ### 轮播图
 
 第三方组件
 flutter_swiper
 
 ### Dialog
-
+```
 AlertDialog
 SimpleDialog
 showModalBottomSheet
@@ -765,9 +769,9 @@ _showTimer(context){
           Duration(milliseconds: 1500), (t) {
 }); }
 print('执行'); Navigator.pop(context); t.cancel();
-
+```
 ## 路由
-
+```
 路由跳转传值
 onPressed: (){
    Navigator.of(context).push(MaterialPageRoute(
@@ -776,9 +780,10 @@ onPressed: (){
     }
 ) );
 },
+```
 
-
-命名路由
+命名路由  
+```
 //配置路由
 final routes={
       '/':(context)=>Tabs(),
@@ -827,22 +832,18 @@ Widget build(BuildContext context) {
              body:Text("我是一个表单页面 ${arguments != null ? arguments['id'] : '0'}") );
  } 
 }
+```
 
+路由替换  
+Navigator.of(context).pushReplacementNamed('/registerSecond');  
 
-路由替换
-Navigator.of(context).pushReplacementNamed('/registerSecond');
-
-返回到根路由
+返回到根路由  
+```
 Navigator.of(context).pushAndRemoveUntil(
          new MaterialPageRoute(builder: (context) => new Tabs(index:1)),
          (route) => route == null
-);
-
-
-
-
-
-
+);  
+```
 命名路由跳转传值
 
 ## 网络请求
@@ -892,7 +893,7 @@ minSdkVersion 17
 ### 图片上传
 
 image_picker 实现相机拍照 和相册选择
-
+```
 /*拍照*/
 _takePhoto() async {
    var image = await ImagePicker.pickImage(source: ImageSource.camera);
@@ -907,8 +908,9 @@ _openGallery() async {
      _imgPath = image;
    });
 }
-
+```
 上传图片到服务器
+```
  _uploadImage(_imageDir) async{
       FormData formData = new FormData.from({
         "name": "zhangsna 6666666666",
@@ -920,7 +922,7 @@ _openGallery() async {
 
       print(response);
   }
-
+```
 ### 视频播放
 
 video_player
@@ -930,7 +932,7 @@ chewie 是一个非官方的第三方视频播放组件，看起来好像是基�
 
 
 ### 检测网络连接 监听网络变化
-
+```
 connectivity
 
 class _NetworkPageState extends State<NetworkPage> {
@@ -982,19 +984,19 @@ class _NetworkPageState extends State<NetworkPage> {
     );
   }
 }
-
+```
 ## 获取设备信息、获取地 理位置
 
 
 Flutter 中获取设备信息
 device_info
-
+```
 _getDevice() async{
     DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
     AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
     print('设备号 ${androidInfo.androidId}');  // e.g. "Moto G (4)"
   }
-
+```
 
 使用高德定位准备工作 获取 key
 
@@ -1003,7 +1005,7 @@ _getDevice() async{
 
 
 amap_location
-
+```
 1、配置安装依赖
  dependencies:
     amap_location: ^0.2.0
@@ -1038,7 +1040,7 @@ import 'package:location_permissions/location_permissions.dart';
     print("经度:${result.longitude}");
 
     print("纬度:${result.latitude}");
-
+```
 
 
 
@@ -1066,29 +1068,23 @@ prefs.clear();//清空键值对
 
 
 封装成一个类
+```
 class Storage{
-
   static Future<void> setString(key,value) async{
        SharedPreferences sp=await SharedPreferences.getInstance();
-
        sp.setString(key, value);
   }
-
   static Future<String> getString(key) async{
        SharedPreferences sp=await SharedPreferences.getInstance();
-
        return sp.getString(key);
   }
 
   static Future<void> remove(key) async{
        SharedPreferences sp=await SharedPreferences.getInstance();
-
        sp.remove(key);
   }
-
-
 }
-
+```
 ## 调用原生硬件 Api 实现扫码
 
 1、安装
